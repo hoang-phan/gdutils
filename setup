@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ "$PATH" =~ (^|:)"GDUTILS_HOME"(:|$) ]]
+then
+  echo 'Already setup'
+else
+  sudo echo -e "\nexport GDUTILS_HOME="`pwd`"\nexport PATH=\$PATH:\$GDUTILS_HOME" >> ~/.zshrc
+  zsh
+fi
