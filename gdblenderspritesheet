@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -z $OUTPUT ]] || [[ -z $ACTIONS ]] || [[ -z $FBX_MODEL ]]; then
+  echo "Please set the required variables OUTPUT, ACTIONS, FBX_MODEL"
+else
+  rm -rf $OUTPUT
+  blender $GDUTILS_HOME/main.blend -b --python render_animation_spritesheet.py 1> /dev/null
+fi
